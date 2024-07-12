@@ -1,5 +1,5 @@
 print("привет")
 print("ипаиа")
-print("тимтимтми")
+print("nvnvnvbnvbnvb")
 
 
