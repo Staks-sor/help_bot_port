@@ -1,0 +1,15 @@
+name: Deploy to server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to server
+        run: |
+          # Команда для деплоя на сервер
+          ssh 176.123.165.113 "cd project && git pull origin main"
