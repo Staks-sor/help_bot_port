@@ -3,7 +3,7 @@ name: Update Server on Push
 on:
   push:
     branches:
-      - main # Укажи свою ветку, на которой ты хочешь отслеживать изменения
+      - master # Укажи свою ветку, на которой ты хочешь отслеживать изменения
 
 jobs:
   update-server:
