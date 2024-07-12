@@ -12,4 +12,4 @@ jobs:
       - name: Deploy to server
         run: |
           # Команда для деплоя на сервер
-          ssh 176.123.165.113 "cd project && git pull origin main"
+          ssh 176.123.165.113 "cd help_bot_port && git pull origin main"
