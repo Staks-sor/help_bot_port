@@ -1,2 +1,2 @@
 print("привет")
-print("ffg")
+print("mmmmmmmmmm")
