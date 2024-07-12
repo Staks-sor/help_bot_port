@@ -1,4 +1,4 @@
-name: Auto Deploy
+name: Deploy to server
 
 on:
   push:
@@ -11,13 +11,11 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Deploy code
+    - name: Deploy to server
       run: |
-        cd help_bot_port
-        git pull origin main
-
+          # Команда для деплоя на сервер
+          ssh 176.123.165.113 "cd help_bot_port && git pull origin main"
