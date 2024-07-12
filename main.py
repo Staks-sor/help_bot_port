@@ -1,1 +1,2 @@
 print("привет")
+print("ffg")
