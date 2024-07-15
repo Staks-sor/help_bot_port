@@ -16,9 +16,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Copy SSH private key
-      run: echo "$SSH_PRIVATE_KEY" > $HOME/.ssh
+      run: echo "$SSH_PRIVATE_KEY" > $HOME/.ssh/id_rsa
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Set correct permissions for SSH key
+      run: chmod 600 $HOME/.ssh/id_rsa
     - name: Set up Python 3.12
       uses: actions/setup-python@v3
       with:
@@ -29,6 +32,6 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Deploy to server
-      run: ssh staks@176.123.165.113
+      run: ssh -i $HOME/.ssh/id_rsa -o StrictHostKeyChecking=no staks@176.123.165.113 "echo 'Deployment successful'"
 
 
