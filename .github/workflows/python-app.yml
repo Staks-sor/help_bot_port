@@ -36,5 +36,5 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: SSH to server and update repository
       run: |
-        ssh 176.123.165.113
+        ssh -o StrictHostKeyChecking=no 176.123.165.113
    
