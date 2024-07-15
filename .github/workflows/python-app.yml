@@ -29,4 +29,5 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Deploy to server
-      run: sudo su "ssh -i $HOME/id_rsa_dop" staks@176.123.165.113:/help_bot_port
+      run: ssh -i $HOME/id_rsa_dop staks@176.123.165.113
+
