@@ -25,7 +25,7 @@ jobs:
         python-version: "3.12"
     - run: set -eu
     - run: mkdir "$HOME/.ssh"
-    - run: echo "${{ secret.key }}" > "$HOME/.ssh/key"
+    - run: echo "${{ KEY }}" > "$HOME/.ssh/key"
     - run: chmod 600 "$HOME/.ssh/key"
     - name: Install dependencies
       run: |
