@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Copy SSH private key
-      run: echo "$SSH_PRIVATE_KEY" > $HOME/id_rsa_dop
+      run: echo "$SSH_PRIVATE_KEY" > $HOME/.ssh
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: Set up Python 3.12
