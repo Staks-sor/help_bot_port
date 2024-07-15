@@ -19,10 +19,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Python 3.10
+    - name: Set up Python 3.12
       uses: actions/setup-python@v3
       with:
-        python-version: "3.10"
+        python-version: "3.12"
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -36,5 +36,5 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: SSH to server and update repository
       run: |
-        ssh user@176.123.165.113 "cd help_bot_port && git pull"
+        ssh 176.123.165.113 "cd help_bot_port && git pull"
    
