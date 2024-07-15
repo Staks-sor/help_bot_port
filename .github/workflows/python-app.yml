@@ -15,6 +15,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Copy SSH private key
+      run: echo "$SSH_PRIVATE_KEY" > $HOME/id_rsa_dop
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
     - name: Set up Python 3.12
       uses: actions/setup-python@v3
       with:
@@ -26,5 +30,3 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Deploy to server
       run: rsync -e "ssh -i $HOME/id_rsa_dop" --archive --compress --delete . staks@176.123.165.113:/help_bot_port
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
