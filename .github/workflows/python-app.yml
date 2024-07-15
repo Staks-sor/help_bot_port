@@ -20,14 +20,14 @@ jobs:
       with:
         python-version: "3.12"
     - run: set -eu
-    - run: mkdir "$HOME/.ssh"
-    - run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > "$HOME/.ssh/id_rsa"
-    - run: chmod 600 "$HOME/.ssh/id_rsa"
+    - run: mkdir "$HOME"
+    - run: echo "${{ secrets.SSH_PRIVATE_KEY }}" > "$HOME/id_rsa_dop"
+    - run: chmod 600 "$HOME/id_rsa_dop"
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Deploy to server
-      run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . staks@176.123.165.113:/help_bot_port
+      run: rsync -e "ssh -i $HOME/key -o StrictHostKeyChecking=no" --archive --compress --delete . staks@176.123.165.113:/help_bot_port
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
