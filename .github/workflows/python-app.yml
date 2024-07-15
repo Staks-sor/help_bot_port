@@ -28,6 +28,6 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Deploy to server
-      run: ssh -o StrictHostKeyChecking=no 176.123.165.113 "cd help_bot_port && git pull"
+      run: ssh -o StrictHostKeyChecking=no staks@176.123.165.113 "cd help_bot_port && git pull"
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
