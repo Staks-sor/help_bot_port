@@ -27,3 +27,4 @@ jobs:
         run: ssh -i ${{ secrets.SSH_PRIVATE_KEY }} staks@176.123.165.113 "echo 'Deployment successful'"
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
