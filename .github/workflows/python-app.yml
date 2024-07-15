@@ -25,5 +25,5 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Deploy to server
         run: ssh -i ${{ secrets.SSH_PRIVATE_KEY }} staks@176.123.165.113 "echo 'Deployment successful'"
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
