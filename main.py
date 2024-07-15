@@ -24,7 +24,7 @@ async def cmd_start(message: types.Message):
     await message.answer(f"{greetings_message}")
     kb = [
         [
-            types.KeyboardButton(text="Регистрацияхуй"),
+            types.KeyboardButton(text="Регистрацияхуbfgngfhgfhgfhgfhgfhgfhgfhgfhgfhgfhfghgfhgfhgfй"),
             types.KeyboardButton(text="Без регистрации")
         ],
     ]
