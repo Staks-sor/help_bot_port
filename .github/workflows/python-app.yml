@@ -31,3 +31,4 @@ jobs:
       run: rsync -e "ssh -i /home/runner/.ssh/key -o ServerAliveInterval=60 -o ClientAliveInterval=60 -o StrictHostKeyChecking=no" --archive --compress --delete . staks@176.123.165.113:/help_bot_port
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        passphrase: ${{ secrets.PASSPHRASE }}
