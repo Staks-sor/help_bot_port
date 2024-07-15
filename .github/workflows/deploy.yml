@@ -20,4 +20,4 @@ jobs:
       - run: chmod 600 "$HOME/.ssh/key"
 
       - run: |
-          ssh 176.123.165.113 "cd help_bot_port && git pull"
+          cd help_bot_port && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" 176.123.165.113
