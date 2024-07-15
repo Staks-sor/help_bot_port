@@ -28,7 +28,7 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Deploy to server
-      run: rsync -e "ssh -i /home/runner/.ssh/id_rsa -o ServerAliveInterval=60 -o StrictHostKeyChecking=no" --archive --compress --delete . staks@176.123.165.113:/help_bot_port
+      run: ssh -i /home/runner/.ssh/id_rsa staks@176.123.165.113
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
