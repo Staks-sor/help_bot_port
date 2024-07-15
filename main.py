@@ -25,7 +25,7 @@ async def cmd_start(message: types.Message):
     kb = [
         [
             types.KeyboardButton(text="Регистрация[eq[e[qe[eq[eq[eq"),
-            types.KeyboardButton(text="Беmmmmm6565465465464")
+            types.KeyboardButton(text="Беmmmmm65654654654640000000000000000000000000")
         ],
     ]
     keyboard = types.ReplyKeyboardMarkup(
