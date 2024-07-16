@@ -24,8 +24,8 @@ async def cmd_start(message: types.Message):
     await message.answer(f"{greetings_message}")
     kb = [
         [
-            types.KeyboardButton(text="Регистрация[eq[e[qe[eq[eq[eq"),
-            types.KeyboardButton(text="Беmmmmm656546540000000000000000")
+            types.KeyboardButton(text="Регистрация"),
+            types.KeyboardButton(text="Без регистрации")
         ],
     ]
     keyboard = types.ReplyKeyboardMarkup(
@@ -34,7 +34,7 @@ async def cmd_start(message: types.Message):
         input_field_placeholder="Выберите способ подачи",
 
     )
-    await message.answer("vfdgdf", reply_markup=keyboard)
+    await message.answer("Для полного доступа к системе необходимо зарегистрироваться", reply_markup=keyboard)
 
 
 @dp.message(F.text.lower() == "регистрация")
