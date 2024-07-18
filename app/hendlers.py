@@ -13,7 +13,7 @@ router = Router()
 
 @router.message(CommandStart())
 async def cmd_start(message: Message):
-    await message.answer(f"{greetings_message}", reply_markup=kb.main)
+    await message.answer(f"{greetings_message}", reply_markup=kb.settings)
 
 
 @router.message(Command("help"))
