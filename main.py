@@ -4,6 +4,7 @@ from aiogram import Bot, Dispatcher
 import os
 from dotenv import load_dotenv
 
+from app.hendlers import router
 
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
@@ -19,6 +20,7 @@ dp = Dispatcher()
 
 # Запуск процесса поллинга новых апдейтов
 async def main():
+    dp.include_router(router)
     await dp.start_polling(bot)
 
 
