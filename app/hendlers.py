@@ -5,40 +5,20 @@ from aiogram.types import Message
 from Description.Description import greetings_message
 from aiogram import F, types, Router
 
+import app.keyboards as kb
+
+
 router = Router()
 
 
 @router.message(CommandStart())
 async def cmd_start(message: Message):
-    await message.answer(f"{greetings_message}")
-    kb = [
-        [
-            types.KeyboardButton(text="Регистрация"),
-            types.KeyboardButton(text="Без регистрации")
-        ],
-    ]
-    keyboard = types.ReplyKeyboardMarkup(
-        keyboard=kb,
-        resize_keyboard=True,
-        input_field_placeholder="Выберите способ подачи",
-
-    )
-    await message.answer("Для полного доступа к системе необходимо зарегистрироваться", reply_markup=keyboard)
+    await message.answer(f"{greetings_message}", reply_markup=kb.main)
 
 
 @router.message(Command("help"))
 async def help_function(message: Message):
     await message.answer("я возвращаю help")
-
-
-@router.message(F.text == "Регистрация")
-async def with_puree(message: types.Message):
-    await message.reply("Отличный выбор!")
-
-
-@router.message(F.text == "Без регистрации")
-async def without_puree(message: types.Message):
-    await message.reply("Так невкусно!")
 
 
 @router.message(F.photo)
