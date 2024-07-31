@@ -5,6 +5,7 @@ import os
 from dotenv import load_dotenv
 
 from app.hendlers import router
+from fsm import router as fsm_router
 
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
@@ -15,12 +16,11 @@ bot = Bot(token=BOT_TOKEN)
 # Диспетчер
 dp = Dispatcher()
 
+dp.include_router(router)
+dp.include_router(fsm_router)
 
-# Хэндлер на команду /start
 
-# Запуск процесса поллинга новых апдейтов
 async def main():
-    dp.include_router(router)
     await dp.start_polling(bot)
 
 
