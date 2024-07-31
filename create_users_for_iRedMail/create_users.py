@@ -6,7 +6,7 @@ create_users_teleg_bot_pass = 'pass'
 username = f'{create_users_teleg_bot_username}'
 password = f'{create_users_teleg_bot_pass}'
 domain = 'stas-sor.ru'
-quota = 200
+quota = 50
 
 # Создание SQL-команды
 sql_command = f"bash create_mail_user_SQL.sh {username}@{domain} '{password}' > /tmp/user.sql"
